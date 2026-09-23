@@ -1,0 +1,16 @@
+Galactic Menu Hotkey v1.1
+
+Install Bingus Shared Loader v16 or newer. Import this ZIP into Arsenal or
+HD2MM, enable both addons, deploy, and restart Helldivers 2. Keep the shared
+loader as the winning Wwise startup replacement.
+
+Press Tab aboard the Super Destroyer while no other menu is open to open the
+Galactic Map. Install Mod Bindings Menu separately to change the key under
+Options > Mouse & Keyboard > General > MODS. Without that addon, Tab is used.
+Controller button activation is not yet supported.
+
+Use either this standalone addon or the Galactic Menu Hotkey option in
+Vanilla Plus Megapack. Supports Steam build 25327279.
+
+https://github.com/CowboyBingus/BingusSharedLoader/releases/latest
+https://github.com/CowboyBingus/ModBindingsMenu/releases/latest

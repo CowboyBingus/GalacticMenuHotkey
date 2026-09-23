@@ -1,0 +1,12 @@
+[
+  ".gitattributes",
+  ".gitignore",
+  "CHANGELOG.md",
+  "INSTALL.txt",
+  "README.md",
+  "build.ps1",
+  "publication-files.json",
+  "scripts/build.py",
+  "src/galactic_menu_hotkey.lua",
+  "tests/test_hotkey.lua"
+]
