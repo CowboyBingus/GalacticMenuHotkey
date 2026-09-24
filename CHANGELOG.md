@@ -1,10 +1,46 @@
-# v1.2
+# Changelog
+
+## 1.7
+
+- Rename Galactic Menu Hotkey to Ship Station Hotkeys. The manager GUID, addon resource, binding IDs and log file name are unchanged, so managers treat it as an update and saved keys are kept.
+- Group all six shortcuts under a SHIP STATION HOTKEYS section on the Mod Bindings Menu v2.0 MODS tab, where they can use any activation type and controller buttons.
+- Seat your character in the Hellpod through the game's native instant seat entry after mission selection. The briefing opens without the 3.13-second entry animation, and the pod records you as its occupant.
+- Open the briefing first and skip its 2-second intro wait, so the briefing UI appears immediately. The character is seated on the frame the briefing UI appears; seating later lets the pod entry camera replace the briefing's map camera. The move into the pod can show for a fraction of a second during the briefing's 0.2-second fade-in. If the intro is not observed, seating falls back to a 3-second delay. Closing the briefing before seating cancels the seat and is logged.
+- Fix the 1.6 camera lock when backing out of the briefing. Version 1.6 opened the briefing without seating the character, so the game's exit sequence could not return the camera from the Galactic Map view.
+- If you press F8 during the Hellpod ready animation, the shortcut waits up to ten seconds for the pod to open. Opening another menu or clearing the mission cancels the wait.
+- Limit F8 to solo ship sessions. Pod ownership and seat replication with other players remain unverified.
+- Live tests confirmed F8's instant entry and backing out of the briefing.
+
+## 1.6 (unreleased test build)
+
+- Register the Armory, Control Center, Ship Management, Stratagem Hero, and Hellpod shortcuts with Mod Bindings Menu v1.2.2 while retaining the fixed keys as fallback.
+- Enter Hellpod Deployment through the native setup routine after verifying the idle presenter and matching active pod state. This path awaits live verification.
+- Record that the observed process closure occurred without any shortcut press; its cause remains unconfirmed.
+
+## 1.5 (unreleased test build)
+
+- Require the local avatar to be within three world units of the Stratagem Hero cabinet before F7 starts the arcade. The live test confirmed that starting it from farther away leaves the camera transition unfinished.
+- Disable F8 after the live test showed that opening the map presenter with a mission ready cancels deployment instead of entering the deployment screen.
+- Keep F2-F4 free for the game's performance monitor. Version 1.4 is withdrawn.
+
+## 1.4 (unreleased test build, withdrawn)
+
+- Move Ship Management to F6 and Stratagem Hero to F7 because the game's performance monitor consumes F2-F4, even with Ctrl held. Keep Armory on F1 and Control Center on F5.
+- Correct the Stratagem Hero idle check from the live test: the active-player field is zero while the cabinet is free and can retain the previous player in a separate field.
+- Remove the direct Hellpod loadout presenter call after live testing showed it bypasses required ship camera state and can softlock entry and exit.
+- Make F8 open the mission map so mission selection and deployment use the game's own flow.
+
+## 1.3 (unreleased test build, withdrawn after live test)
+
+- Add F1-F5 ship shortcuts for Armory, Ship Management, Stratagem Hero, Hellpod loadout, and Control Center.
+- Start Stratagem Hero through its native arcade interaction after checking the cabinet and local avatar state.
+- Keep Tab's saved Mod Bindings Menu binding and current-build native safety checks.
+- F4 opens the game's normal loadout flow; deployment still uses the game's ready and launch controls.
+
+## 1.2
 
 - Update the shifted native map presenter address for Steam build 25480438.
 - Keep saved keyboard bindings and Tab fallback.
-- Offline builds and package checks pass; live gameplay validation remains pending.
-
-# Changelog
 
 ## 1.1
 

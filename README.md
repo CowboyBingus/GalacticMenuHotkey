@@ -1,25 +1,34 @@
-> Current local compatibility candidate for Steam build 25480438 / EXE 1.8.46015.0. Offline checks passed; live gameplay verification is pending.
+# Ship Station Hotkeys v1.7
 
-# Galactic Menu Hotkey v1.2
+*Formerly Galactic Menu Hotkey.* Use these shortcuts aboard the Super Destroyer while no other menu is open:
 
-Press **Tab** aboard the Super Destroyer to open the Galactic War Hologram menu. The addon calls the game's existing Hologram presenter directly. It does not enlarge the table interaction, show a distant interaction prompt, send Interact, or move the player toward the table.
+| Key | Ship station | Action |
+| --- | --- | --- |
+| Tab | Galactic Map | Opens the Galactic War Hologram. |
+| F1 | Armory | Opens the equipment menu. |
+| F5 | Control Center | Opens the information terminal. |
+| F6 | Ship Management | Opens ship upgrades. |
+| F7 | Stratagem Hero | Starts the arcade cabinet when your character is beside it. |
+| F8 | Hellpod Deployment | After you select a mission, opens the briefing immediately and seats you in your Hellpod behind it. |
 
-Requires [Bingus Shared Loader v17 or newer / API 1](https://github.com/CowboyBingus/BingusSharedLoader/releases/latest). Install [Mod Bindings Menu](https://github.com/CowboyBingus/ModBindingsMenu/releases/latest) separately to change the keyboard shortcut under **Mouse & Keyboard > General > MODS**. Without it, the shortcut defaults to Tab. Controller button activation is not yet supported.
+The addon calls the game's ship menu presenters and station interaction routines. F2-F4 are left free because the game's performance monitor uses them.
+
+F8 opens the briefing and skips its 2-second intro wait so the briefing appears immediately. Once the briefing is up, hidden behind it, F8 seats your character using the game's instant seat entry, the routine that places a player directly in a seat. The game then records you as the pod's occupant and handles the exit normally when you back out. If you press F8 while the Hellpod is still opening, the shortcut waits up to ten seconds and then enters.
+
+Requires [Bingus Shared Loader v17 or newer / API 1](https://github.com/CowboyBingus/BingusSharedLoader/releases/latest). Install [Mod Bindings Menu v2.0](https://github.com/CowboyBingus/ModBindingsMenu/releases/latest) separately to rebind all six shortcuts on the **MODS** tab of the Mouse & Keyboard and Controller binding pages, under **SHIP STATION HOTKEYS**. Mod Bindings Menu v2.0 also lets you choose Press, Hold, Double Tap and the other activation types, and assign controller buttons. Without it, the listed keys remain fixed fallbacks.
 
 ## Install
 
-Import [Galactic-Menu-Hotkey-v1.2.zip](https://github.com/CowboyBingus/GalacticMenuHotkey/releases/latest) into Arsenal or HD2MM, enable this addon and Bingus Shared Loader, then deploy. Keep Bingus Shared Loader as the winning startup replacement. Restart Helldivers 2 after replacing version 0.8 so its enlarged interaction template is cleared.
+Import `Ship-Station-Hotkeys-v1.7.zip` into Arsenal or HD2MM, enable this addon and Bingus Shared Loader, then deploy. Enable Mod Bindings Menu v2.0 for saved and controller shortcuts. Keep Bingus Shared Loader as the winning startup replacement. Restart Helldivers 2 after replacing an older version.
+
+Upgrading from Galactic Menu Hotkey: this is the same addon under a new name. Your mod manager treats it as an update, and your saved shortcut keys are kept. Remove the withdrawn Galactic Menu Hotkey v1.3 and v1.4 packages if they are still installed. Vanilla Plus Megapack v29 bundles this version as its Ship Station Hotkeys option; do not enable both the standalone addon and that option.
 
 ## Compatibility and test status
 
-This native call is guarded by the exact `game.dll` and `helldivers2.exe` SHA-256 values for Steam build **25480438** (EXE **1.8.46015.0**). It runs only when the ship's galaxy table is present and no menu presenter is active. A changed build, unavailable UI state, or another active menu leaves the shortcut inactive and writes the reason to `%LOCALAPPDATA%\CowboyBingus\Helldivers2\Logs\GalacticMenuHotkey.log`.
+The native calls are guarded by the exact `game.dll` and `helldivers2.exe` SHA-256 values for Steam build **25480438** (EXE **1.8.46015.0**). They run only when the ship's galaxy table is present and no menu presenter is active. F7 also requires an idle arcade cabinet, a valid local avatar, and a world-position distance of at most three units. F8 requires a solo ship session, a selected mission, your own Hellpod (deployment slot 0) open and unoccupied, and your character not already seated. Pod ownership and seat replication with other players are unverified, so F8 stays inactive when another player is aboard. A changed build, unavailable state, or another active menu leaves the shortcut inactive and writes the reason to `%LOCALAPPDATA%\CowboyBingus\Helldivers2\Logs\GalacticMenuHotkey.log` (the log keeps its original name).
 
-Offline tests confirm the function signature, the current build's presenter and screen enum mapping, and the mod's menu guards. A live test confirmed that Tab opens the map from a clear spot away from the table without moving the player. The first opening had a noticeable delay; later openings were smooth.
+Live tests confirmed Tab, F1, F5, F6, and F8's instant Hellpod entry and exit. The seat can show for a fraction of a second during the briefing's 0.2-second fade-in. F7's current distance guard and controller activation through Mod Bindings Menu v2.0 still need a live check. Offline tests check the current build's native entry bytes, the presenter mappings, the Hellpod and seat guards, the instant-entry request, and the saved binding dispatch.
 
 ## Build and validate
 
-Clone BingusSharedLoader beside this repository, then run `python -B scripts/build.py`. Run `luajit tests/test_hotkey.lua` on Windows to check native dispatch guards and binding integration. Optionally set `HD2_GAME_CAPTURE` to a local current-build game.dll memory capture to verify the native entry prefix; captures are not distributed.
-
-Use either this standalone addon or its Vanilla Plus Megapack option. Mod Bindings Menu remains a separate install for either choice.
-
-Current version: **v1.2**, for game build **25480438**. See [changes](CHANGELOG.md) and [validation coverage](docs/MIGRATION_VALIDATION.md).
+Clone BingusSharedLoader beside this repository, then run `python -B scripts/build.py`. Run `python tests/run_game_lua.py --run tests/test_hotkey.lua` on Windows with Helldivers 2 installed to check native dispatch guards and binding integration. Optionally set `HD2_GAME_CAPTURE` to a local current-build game.dll memory capture to verify the native entry prefixes; captures are not distributed.

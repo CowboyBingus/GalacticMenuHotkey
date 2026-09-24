@@ -1,3 +1,4 @@
-- Update the shifted native map presenter address for Steam build 25480438.
-- Keep saved keyboard bindings and Tab fallback.
-- Offline builds and package checks pass; live gameplay validation remains pending.
+- Rename Galactic Menu Hotkey to Ship Station Hotkeys; the manager GUID, addon resource, binding IDs and log name are unchanged, so it updates in place and keeps saved keys.
+- Add ship station shortcuts: F1 Armory, F5 Control Center, F6 Ship Management, F7 Stratagem Hero beside its cabinet, and F8 instant Hellpod entry after mission selection in solo sessions.
+- Group all six shortcuts under SHIP STATION HOTKEYS on the Mod Bindings Menu v2.0 MODS tab, with any activation type and controller buttons.
+- Live tests confirmed Tab, F1, F5, F6 and F8 entry and exit; F7 distance guard awaits a live check.

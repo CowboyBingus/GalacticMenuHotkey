@@ -10,5 +10,6 @@
   "publication-files.json",
   "scripts/build.py",
   "src/galactic_menu_hotkey.lua",
+  "tests/run_game_lua.py",
   "tests/test_hotkey.lua"
 ]
