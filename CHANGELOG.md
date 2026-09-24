@@ -1,3 +1,9 @@
+# v1.2
+
+- Update the shifted native map presenter address for Steam build 25480438.
+- Keep saved keyboard bindings and Tab fallback.
+- Offline builds and package checks pass; live gameplay validation remains pending.
+
 # Changelog
 
 ## 1.1

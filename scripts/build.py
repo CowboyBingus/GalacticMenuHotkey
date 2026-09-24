@@ -8,7 +8,7 @@ HERE = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(HERE.parent / "BingusSharedLoader" / "scripts"))
 from build_addon import build_addon
 
-VERSION = "1.1"
+VERSION = "1.2"
 
 
 def build():

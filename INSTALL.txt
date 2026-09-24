@@ -1,6 +1,8 @@
-Galactic Menu Hotkey v1.1
+Current local compatibility candidate for Steam build 25480438 / EXE 1.8.46015.0. Offline checks passed; live gameplay verification is pending.
 
-Install Bingus Shared Loader v16 or newer. Import this ZIP into Arsenal or
+Galactic Menu Hotkey v1.2
+
+Install Bingus Shared Loader v17 or newer. Import this ZIP into Arsenal or
 HD2MM, enable both addons, deploy, and restart Helldivers 2. Keep the shared
 loader as the winning Wwise startup replacement.
 
@@ -10,7 +12,7 @@ Options > Mouse & Keyboard > General > MODS. Without that addon, Tab is used.
 Controller button activation is not yet supported.
 
 Use either this standalone addon or the Galactic Menu Hotkey option in
-Vanilla Plus Megapack. Supports Steam build 25327279.
+Vanilla Plus Megapack. Supports Steam build 25480438.
 
 https://github.com/CowboyBingus/BingusSharedLoader/releases/latest
 https://github.com/CowboyBingus/ModBindingsMenu/releases/latest

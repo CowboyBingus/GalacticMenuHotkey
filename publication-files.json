@@ -5,6 +5,8 @@
   "INSTALL.txt",
   "README.md",
   "build.ps1",
+  "docs/MIGRATION_VALIDATION.md",
+  "docs/RELEASE_NOTES.md",
   "publication-files.json",
   "scripts/build.py",
   "src/galactic_menu_hotkey.lua",
